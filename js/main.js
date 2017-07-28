@@ -1,7 +1,8 @@
 var Nakama = {};
 Nakama.configs = {
   GAME_WIDTH: 640,
-  GAME_HEIGHT: 960
+  GAME_HEIGHT: 960,
+  BULLET_SPEED: 400
 };
 
 window.onload = function(){
@@ -45,26 +46,29 @@ var create = function(){
     400,
     "Spaceship1-Player.png",
     {
-      up    :   Phaser.Keyboard.UP,
-      down  :   Phaser.Keyboard.DOWN,
-      left  :   Phaser.Keyboard.LEFT,
-      right :   Phaser.Keyboard.RIGHT,
-      fire  :   Phaser.Keyboard.SPACERBAR
-    })
-  );
+      up        :   Phaser.Keyboard.UP,
+      down      :   Phaser.Keyboard.DOWN,
+      left      :   Phaser.Keyboard.LEFT,
+      right     :   Phaser.Keyboard.RIGHT,
+      fire      :   Phaser.Keyboard.SPACEBAR,
+      cooldown  :   0.5
+    }
+  ));
 
   Nakama.players.push(new ShipController(
     400,
     400,
     'Spaceship2-Partner.png',
     {
-      up    :   Phaser.Keyboard.W,
-      down  :   Phaser.Keyboard.S,
-      left  :   Phaser.Keyboard.A,
-      right :   Phaser.Keyboard.D,
-      fire  :   Phaser.Keyboard.G
-    })
-  );
+      up        :   Phaser.Keyboard.W,
+      down      :   Phaser.Keyboard.S,
+      left      :   Phaser.Keyboard.A,
+      right     :   Phaser.Keyboard.D,
+      fire      :   Phaser.Keyboard.G,
+      cooldown  :   0.5
+    }
+  ));
+  Nakama.bullets = [];
 }
 
 // update game state each frame

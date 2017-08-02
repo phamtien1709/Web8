@@ -3,6 +3,7 @@ Nakama.configs = {
   GAME_WIDTH: 640,
   GAME_HEIGHT: 960,
   BULLET_SPEED: 400,
+  ENEMY_MS : 300,
   P1_START_POSITION : {
     x : 200,
     y : 400
@@ -10,6 +11,10 @@ Nakama.configs = {
   P2_START_POSITION : {
     x : 400,
     y : 400
+  },
+  ENEMY_POSITION : {
+    x : 300,
+    y : 100
   }
 };
 
@@ -50,6 +55,7 @@ var create = function(){
   Nakama.background = Nakama.game.add.sprite(0, -960, 'background');
   Nakama.bulletGroup = Nakama.game.add.physicsGroup();
   Nakama.playerGroup = Nakama.game.add.physicsGroup();
+  Nakama.enemyGroup = Nakama.game.add.physicsGroup();
 
   Nakama.players = [];
   Nakama.players.push(new ShipController(
@@ -80,6 +86,13 @@ var create = function(){
     }
   ));
   Nakama.bullets = [];
+  Nakama.enemies = [];
+  Nakama.enemies.push(new EnemyController(
+    Nakama.configs.ENEMY_POSITION.x,
+    Nakama.configs.ENEMY_POSITION.y,
+    'EnemyType1.png',
+    {}
+  ));
 }
 
 // update game state each frame

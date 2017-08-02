@@ -2,7 +2,15 @@ var Nakama = {};
 Nakama.configs = {
   GAME_WIDTH: 640,
   GAME_HEIGHT: 960,
-  BULLET_SPEED: 400
+  BULLET_SPEED: 400,
+  P1_START_POSITION : {
+    x : 200,
+    y : 400
+  },
+  P2_START_POSITION : {
+    x : 400,
+    y : 400
+  }
 };
 
 window.onload = function(){
@@ -40,10 +48,13 @@ var create = function(){
   Nakama.keyboard = Nakama.game.input.keyboard;
 
   Nakama.background = Nakama.game.add.sprite(0, -960, 'background');
+  Nakama.bulletGroup = Nakama.game.add.physicsGroup();
+  Nakama.playerGroup = Nakama.game.add.physicsGroup();
+
   Nakama.players = [];
   Nakama.players.push(new ShipController(
-    200,
-    400,
+    Nakama.configs.P1_START_POSITION.x,
+    Nakama.configs.P1_START_POSITION.y,
     "Spaceship1-Player.png",
     {
       up        :   Phaser.Keyboard.UP,
@@ -51,13 +62,13 @@ var create = function(){
       left      :   Phaser.Keyboard.LEFT,
       right     :   Phaser.Keyboard.RIGHT,
       fire      :   Phaser.Keyboard.SPACEBAR,
-      cooldown  :   0.5
+      cooldown  :   0.2
     }
   ));
 
   Nakama.players.push(new ShipController(
-    400,
-    400,
+    Nakama.configs.P2_START_POSITION.x,
+    Nakama.configs.P2_START_POSITION.y,
     'Spaceship2-Partner.png',
     {
       up        :   Phaser.Keyboard.W,
@@ -65,7 +76,7 @@ var create = function(){
       left      :   Phaser.Keyboard.A,
       right     :   Phaser.Keyboard.D,
       fire      :   Phaser.Keyboard.G,
-      cooldown  :   0.5
+      cooldown  :   0.2
     }
   ));
   Nakama.bullets = [];

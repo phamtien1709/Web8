@@ -6,17 +6,21 @@ class ShipType2Controller extends ShipController{
       `Spaceship1${spriteSuffix}.png`,
       configs
     );
-
-    this.configs.SHIP_SPEED = 200;
+    this.configs.DIRECT_BULLET = 22;
+    this.configs.SHIP_SPEED = 300;
     this.configs.COOLDOWN   = 500;
   }
 
   fire(){
-    new BulletType1Controller(
-      this.sprite.x,
+    new BulletType2Controller(
+      this.sprite.x + this.configs.DIRECT_BULLET,
       this.sprite.y,
-      "BulletType1.png",
       {}
     );
+    new BulletType2Controller(
+      this.sprite.x - this.configs.DIRECT_BULLET,
+      this.sprite.y,
+      {}
+    )
   }
 }

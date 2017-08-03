@@ -6,8 +6,6 @@ class ShipController{
     this.sprite.anchor = new Phaser.Point(0.5, 0.5);
 
     this.configs = configs;
-    this.configs.SHIP_SPEED = 300;
-    this.configs.COOLDOWN = 300;
 
     this.nextShotTime = 0;
 

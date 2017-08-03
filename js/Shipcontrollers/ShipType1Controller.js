@@ -7,15 +7,14 @@ class ShipType1Controller extends ShipController{
       configs
     );
 
-    this.configs.SHIP_SPEED = 400;
-    this.configs.COOLDOWN   = 300;
+    this.configs.SHIP_SPEED = 500;
+    this.configs.COOLDOWN   = 200;
   }
 
   fire(){
     new BulletType1Controller(
       this.sprite.x,
       this.sprite.y,
-      "BulletType1.png",
       {}
     );
   }

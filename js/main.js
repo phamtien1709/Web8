@@ -67,7 +67,7 @@ var create = function(){
     )
   );
   Nakama.players.push(
-    new ShipType1Controller(
+    new ShipType2Controller(
       Nakama.configs.P2_START_POSITION.x,
       Nakama.configs.P2_START_POSITION.y,
       '-Partner',
@@ -88,7 +88,7 @@ var create = function(){
       200,
       'EnemyType1.png',
       {
-        health : 5
+        health : 10
       }
     )
   )

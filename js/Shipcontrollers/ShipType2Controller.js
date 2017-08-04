@@ -14,13 +14,11 @@ class ShipType2Controller extends ShipController{
   fire(){
     new BulletType2Controller(
       this.sprite.position.x + this.configs.DIRECT_BULLET,
-      this.sprite.position.y,
-      {}
+      this.sprite.position.y
     );
     new BulletType2Controller(
       this.sprite.position.x - this.configs.DIRECT_BULLET,
-      this.sprite.position.y,
-      {}
+      this.sprite.position.y
     )
   }
 }

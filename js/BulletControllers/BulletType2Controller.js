@@ -5,12 +5,11 @@ class BulletType2Controller extends BulletController {
     this.TURN_RATE = 5;
     this.BULLET_SPEED = 200;
 
-
     this.sprite.update = this.update.bind(this);
   }
   update(){
     var targetAngle = Nakama.game.math.angleBetween(
-      this.sprite.x, this.sprite.y,
+      this.sprite.position.x, this.sprite.position.y,
       Nakama.enemies[0].sprite.x, Nakama.enemies[0].sprite.y
     );
     if (this.sprite.rotation !== targetAngle){
@@ -31,7 +30,5 @@ class BulletType2Controller extends BulletController {
       this.sprite.body.velocity.x = Math.cos(this.sprite.rotation) * this.BULLET_SPEED;
       this.sprite.body.velocity.y = Math.sin(this.sprite.rotation) * this.BULLET_SPEED;
     };
-    this.sprite.body.velocity.y = -this.BULLET_SPEED;
-
   }
 }

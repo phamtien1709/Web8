@@ -16,7 +16,7 @@
 span:hover {
   background: #9CD08F;
   color: #FFFFFF;
-  transition: 1s;
+  transition: 0.5s;
 }
 .menu-vertical {
   display: inline-block;

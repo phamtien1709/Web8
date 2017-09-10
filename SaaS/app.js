@@ -1,6 +1,5 @@
 const fileController = require('./fileController');
-const filename = 'test.txt';
+const filename = 'F:/Techkids_Web_Gen8/SaaS/public/style.css';
 
-console.log(fileController.readFile(filename));
-
-console.log('Hello world');
+var a = fileController.readFile(filename);
+console.log(a);

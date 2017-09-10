@@ -2,6 +2,7 @@
   display: block;
   background-color: #D5B0AC;
   text-align: center;
+  line-height: 30px;
   margin-bottom: 100px;
 }
 .span-menu {
@@ -33,4 +34,28 @@ span:hover {
 }
 .line-dividing {
   border-bottom: 1px solid white;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content-con {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 1%;
+}
+
+.span-menu-vertical:hover > .dropdown-content-con {
+  display: block;
 }

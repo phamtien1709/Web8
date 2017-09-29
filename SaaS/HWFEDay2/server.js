@@ -32,7 +32,7 @@ app.get('/api', (req, res) => {
   res.send('<h1>This page is useless of you!</h1>')
 });
 
-
+app.use(express.static(__dirname + "/public"));
 app.listen(6969, () => {
   console.log('server is up');
 });

@@ -8,7 +8,8 @@ Router.get('/', (req, res) => {
     question = 'Chưa có câu hỏi nào trong bộ câu hỏi!';
     res.render('home', {
       question,
-      visibility : 'hidden'
+      visibility : 'hidden',
+      askView: 'class="active"'
     });
   }
   else {

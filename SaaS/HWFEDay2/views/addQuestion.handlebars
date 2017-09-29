@@ -2,7 +2,10 @@
 <br>
 
 <form class="form-group" action="/question/post" method="post">
-  <textarea class="form-control" rows="5" type="text" name="newQuestion" placeholder="Input your question.."></textarea>
+  <textarea id="question_tf" class="form-control" rows="5" type="text" maxlength="200" name="newQuestion" placeholder="Input your question.."></textarea>
+  <p class="help-block">Còn <span id="text_counter">200</span>/200 ký tự</p>
   <br>
   <button class="btn btn-primary btn-md" type="submit">Gửi</button>
 </form>
+
+<script type="text/javascript" src="/ask.js"></script>

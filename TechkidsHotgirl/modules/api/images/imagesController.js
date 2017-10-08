@@ -28,6 +28,13 @@ Router.get('/', (req, res) => {
 
 Router.get('/:id', (req, res) => {
   //get image by id
+  imagesModel.getImageById(req.params.id, (err, doc) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send(doc);
+    }
+  });
 });
 
 module.exports = Router;

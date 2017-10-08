@@ -19,11 +19,22 @@ const createImage = (image, callback) => {
   })
 }
 //Get
-
+const getImageById = (imageId, callback) => {
+  imagesModel.findOne({ '_id' : imageId })
+              .select({_id:0, name:1, content:1})
+              .exec((err, doc) => {
+    if(err) {
+      throw (err);
+    } else {
+      callback(null, doc);
+    }
+  });
+}
 //Update
 
 //Delete
 
 module.exports = {
-  createImage
+  createImage,
+  getImageById
 }

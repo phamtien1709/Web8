@@ -1,0 +1,20 @@
+body{
+  background: #DFDFDF;
+}
+
+.header{
+  background: #ffffff;
+  z-index: 1;
+}
+
+.main_content{
+  padding-top: 30px;
+}
+
+.img-fluid{
+  width: 100%;
+}
+
+.image_item{
+  margin-bottom: 30px;
+}

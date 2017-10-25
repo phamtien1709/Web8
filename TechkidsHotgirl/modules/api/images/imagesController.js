@@ -6,9 +6,10 @@ const imagesModel = require('./imagesModel');
 //POST
 Router.post('/', (req, res) => {
   console.log(req.body);
+
   imagesModel.createImage(req.body, (err, newImage) => {
     if (err) {
-      res.send(err);
+      res.send(err.errmsg);
     } else {
       console.log(newImage);
       let result = {
@@ -26,11 +27,15 @@ Router.get('/', (req, res) => {
   //get all image
 });
 
+//GET
+Router.get('/page/2', (req, res) => {
+  //get all image
+});
+
 Router.get('/:id', (req, res) => {
-  //get image by id
   imagesModel.getImageById(req.params.id, (err, doc) => {
-    if(err) {
-      res.send(err);
+    if (err) {
+      res.send(err.msg);
     } else {
       res.send(doc);
     }

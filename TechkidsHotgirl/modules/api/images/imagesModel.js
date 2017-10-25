@@ -20,12 +20,12 @@ const createImage = (image, callback) => {
 }
 //Get
 const getImageById = (imageId, callback) => {
-  imagesModel.findOne({ '_id' : imageId })
-              .select({_id:0, name:1, content:1})
-              .exec((err, doc) => {
-    if(err) {
+  imagesModel.find({ 'content' : { $like : imageId } })
+    .populate('createBy').lean().exec((err, doc) => {
+    if (err) {
       throw (err);
     } else {
+      console.log(doc);
       callback(null, doc);
     }
   });

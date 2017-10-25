@@ -1,6 +1,5 @@
 const express = require('express');
 const Router = express.Router();
-
 const usersModel = require('./usersModel');
 
 Router.post('/', (req, res) => {
@@ -12,9 +11,10 @@ Router.post('/', (req, res) => {
     fullname : req.body.fullname,
     dob : req.body.dob
   };
+
   usersModel.createUser(newUser, (err, doc) => {
-    if(err) {
-      res.send(err);
+    if (err) {
+      res.send(err.errmsg);
     } else {
       res.send(doc);
     }
